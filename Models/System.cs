@@ -17,8 +17,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
             Hotels = new List<Hotel>();
         }
 
-        public void AddHotel(
-            hotel)
+        public void AddHotel(Hotel hotel)
         {
             Hotels.Add(hotel);
         }

@@ -7,23 +7,23 @@ namespace CC3_1N_HMS
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<Room> yananRooms = new List<Room>();
             Room room1 = new Room(101, Style.TwinRoom, 1500);
             Room room2 = new Room(102, Style.KingRoom, 3000);
             yananRooms.Add(room1);
             yananRooms.Add(room2);
-            Hotel hotelYanan = new Hotel("Hotel Yanan", "123 GStreet, Takaw City", yananRooms);
+            Hotel hotelYanan = new Hotel("Hotel Yanan", "123 GStreet", "Takaw City", yananRooms);
 
             List<Room> hotel456Rooms = new List<Room>();
             Room hotel456Room1 = new Room(101, Style.QueenRoom, 2000);
             Room hotel456Room2 = new Room(102, Style.QueenRoom, 2000);
             hotel456Rooms.Add(hotel456Room1);
             hotel456Rooms.Add(hotel456Room2);
-            Hotel hotel456 = new Hotel("Hotel 456", "Session Road, Baguio City", hotel456Rooms);
+            Hotel hotel456 = new Hotel("Hotel 456", "Session Road", "Baguio City", hotel456Rooms);
 
-            HotelManagementSystem hms = new HotelManagementSystem(); 
+            HotelManagementSystem hms = new HotelManagementSystem();
             hms.AddHotel(hotelYanan);
             hms.AddHotel(hotel456);
 
@@ -39,7 +39,7 @@ namespace CC3_1N_HMS
             //  Room 102, Style: KingRoom, Price: 3000
             hotelYanan.DisplayAvailableRooms();
 
-            Guest terry = ("Terry", "Addr 1", "terry@email.com", "63919129"); 
+            Guest terry = new Guest("Terry", "Addr 1", "terry@email.com", "63919129");
             hms.RegisterUser(terry);
 
             hms.BookReservation(hotelYanan, room1, terry, DateTime.Now, new DateTime(2024, 04, 16));
