@@ -13,13 +13,16 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
         public int RoomNum { get; set; }
         public double BookingPrice { get; set; }
         public bool Available { get; set; }
+        public string Style { get; set; }
 
-        public Room(int roomnum, double bookingprice, bool available)
+        public Room(int roomnum, string style, double bookingprice, bool available)
         {
             RoomNum = roomnum;
+            Style = style;
             BookingPrice = bookingprice;
             Available = available;
         }
+
         public virtual string GetDetails()
         {
             return $"{RoomNum} {BookingPrice} ({Available})";

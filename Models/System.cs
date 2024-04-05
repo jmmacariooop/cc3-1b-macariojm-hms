@@ -53,6 +53,9 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
             }
         }
 
-
+        internal void RegisterUser(Customer terry)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

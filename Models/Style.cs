@@ -9,9 +9,12 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
 {
     public class Style : Room
     {
-        //Twin
-        public 
-        //Queen 
-        //King
+        internal static readonly string TwinRoom;
+        internal static readonly string KingRoom;
+        internal static readonly string QueenRoom;
+
+        public Style(int roomnum, string style, double bookingprice, bool available ) : base(roomnum, style, bookingprice, available)
+        {
+        }
     }
 }

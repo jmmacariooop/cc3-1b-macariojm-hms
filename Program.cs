@@ -41,7 +41,7 @@ namespace CC3_1N_HMS
             //  Room 102, Style: KingRoom, Price: 3000
             hotelYanan.DisplayAvailableRooms();
 
-            Guest terry = new Guest("Terry", "Addr 1", "terry@email.com", 63919129);
+            Customer terry = new Customer("Terry", "Addr 1", "terry@email.com", 63919129);
             hms.RegisterUser(terry);
 
             hms.BookReservation(hotelYanan, room1, terry, DateTime.Now, new DateTime(2024, 04, 16));

@@ -13,6 +13,15 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
         public string Address { get; set; }
         public string Email { get; set; }
         public int PhoneNum { get; set; }
+
+
+        public Customer(string name, string address, string email, int phonemum)
+        {
+            Address = address;
+            Name = name;
+            PhoneNum = phonemum;
+            Email = email;
+        }
         public void BookRoom(Room room)
         {
             room.BookRoom();

@@ -10,8 +10,8 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
 {
     public class Guest : Customer
     {
-        public int NumberofBookedRooms { get; set; }
-        public Room(string RoomNum) : base(RoomNum)
+        public string NumberofBookedRooms { get; set; }
+        public Room(string numberofbookedrooms) : base(numberofbookedrooms)
         {
             NumberofBookedRooms = numberofbookedrooms;
         }
