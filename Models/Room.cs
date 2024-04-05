@@ -10,17 +10,18 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
 {
     public class Room
     {
-        public int RoomNum { get; set; }
-        public double BookingPrice { get; set; }
+        public int RoomNum { get; }
+        public double BookingPrice { get; }
+        public Style Style{ get; }
         public bool Available { get; set; }
-        public string Style { get; set; }
 
-        public Room(int roomnum, string style, double bookingprice, bool available)
+
+        public Room(int roomnum, Style style, double bookingprice)
         {
             RoomNum = roomnum;
-            Style = style;
+            Style = Style;
             BookingPrice = bookingprice;
-            Available = available;
+
         }
 
         public virtual string GetDetails()

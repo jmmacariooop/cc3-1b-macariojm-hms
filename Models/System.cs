@@ -8,54 +8,46 @@ using System.Threading.Tasks;
 
 namespace HOTEL_MANAGEMENT_SYSTEM.Models
 {
-    public class HotelSystem
+    public class HotelManagementSystem
     {
-        private List<Room> _availableRooms;
-        private List<Room> _bookedRooms;
+        private List<Hotel> Hotels { get; }
 
-        public HotelSystem()
+        public HotelManagementSystem()
         {
-            _availableRooms = new List<Room>();
-            _bookedRooms = new List<Room>();
+            Hotels = new List<Hotel>();
         }
 
-        public void AddAvailRoom(Room room)
+        public void AddHotel(
+            hotel)
         {
-            _availableRooms.Add(room);
+            Hotels.Add(hotel);
         }
-        public void BookRoom(Room room, Customer customer)
+
+        public void DisplayHotels()
         {
-            if (room.Available)
+            Console.WriteLine("List of Hotels:");
+            foreach (var hotel in Hotels)
             {
-                customer.BookRoom(room);
-                _bookedRooms.Add(room);
-                _bookedRooms.Remove(room);
-            }
-            else
-            {
-                Console.WriteLine("Room is already booked.");
-            }
-        }
-        public void DisplayAvailableRooms()
-        {
-            Console.WriteLine("Available Rooms:");
-            foreach (Room room in _availableRooms)
-            {
-                Console.WriteLine("\t" + room.GetDetails());
-            }
-        }
-        public void DisplayBookedRooms()
-        {
-            Console.WriteLine("Booked Rooms:");
-            foreach (Room room in _bookedRooms)
-            {
-                Console.WriteLine("\t" + room.GetDetails());
+                Console.WriteLine($"  {hotel.Name}, {hotel.Location}");
             }
         }
 
-        internal void RegisterUser(Customer terry)
+        public void BookReservation(Hotel hotel, Room room, Guest guest, DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            guest.MakeReservation(hotel, room, startDate, endDate);
         }
+
+        public void RegisterUser(Customer user)
+        {
+            Console.WriteLine($"User {user.Name} registered.");
+        }
+
+        public void DisplayReservationDetails(int reservationNumber)
+        {
+            // Assuming this method displays the details of the reservation with the given number.
+            Console.WriteLine($"Details of Reservation {reservationNumber}:");
+            // Code to display reservation details goes here
+        }
+
     }
 }

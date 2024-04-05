@@ -7,33 +7,20 @@ using System.Threading.Tasks;
 
 namespace HOTEL_MANAGEMENT_SYSTEM.Models
 {
-    public class Customer
+    public abstract class Customer
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public int PhoneNum { get; set; }
+        public string Name { get; }
+        public string Address { get; }
+        public string Email { get; }
+        public string PhoneNum { get; }
 
 
-        public Customer(string name, string address, string email, int phonemum)
+        protected Customer(string name, string address, string email, string phonemum)
         {
             Address = address;
             Name = name;
             PhoneNum = phonemum;
             Email = email;
         }
-        public void BookRoom(Room room)
-        {
-            room.BookRoom();
-            Console.WriteLine($"Room is booked: {room.GetDetails()}");
-        }
-
-        public void CancelBooking(Room room)
-        {
-            room.Return();
-            Console.WriteLine($"Room booking is cancelled: {room.GetDetails()}");
-        }
     }
-
-
 }
